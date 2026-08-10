@@ -179,3 +179,35 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+# HDDM / MCMC generated objects
+*.db
+*.hddm
+traces.db
+
+# Large generated model outputs
+results/hddm/
+results/hddm_formal/m_a/
+results/hddm_formal/m_v/
+results/hddm_formal/m_va/
+results/hddm_formal/logs/
+
+# Intermediate posterior predictive outputs
+**/predictive_condition_replicates.csv
+**/predictive_effect_replicates.csv
+
+# Temporary / diagnostic optimality outputs
+results/optimality/posterior_uncertainty_80draw/
+results/optimality/seed_stability/
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Temporary files
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
