@@ -1,0 +1,4 @@
+model,n_parameters,max_rhat,n_rhat_gt_1.01,n_rhat_gt_1.05,n_rhat_gt_1.10,status,method
+m_v,231,1.0189334014910636,6,0,0,GOOD,kabuki.analyze.gelman_rubin
+m_a,193,1.011322947367407,2,0,0,GOOD,kabuki.analyze.gelman_rubin
+m_va,269,1.0064965046011771,0,0,0,GOOD,kabuki.analyze.gelman_rubin
