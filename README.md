@@ -41,8 +41,6 @@ reward-ddm-optimality/
 │   └── run_all_formal.sh
 │
 ├── data/
-│   ├── raw/
-│   │   └── RawData_Exp2.txt
 │   └── processed/
 │       └── Braeutigam_Exp2_Stroop_HDDM.csv
 │
@@ -83,34 +81,60 @@ reward-ddm-optimality/
 
 ## Data
 
-Two data files are used in the analysis.
-
-### Raw experimental data
-
-```text
-data/raw/RawData_Exp2.txt
-```
-
-This file contains the original Experiment 2 data and is used to reconstruct the block-wise reward RT criterion.
-
 ### Processed HDDM data
+
+The processed trial-level data used for HDDM fitting are included in this repository:
 
 ```text
 data/processed/Braeutigam_Exp2_Stroop_HDDM.csv
 ```
 
-This file contains the processed trial-level Stroop data used for HDDM fitting.
-
 After the predefined exclusions and HDDM coding procedure, the final HDDM dataset contains:
 
-* 37 participants
-* 10,651 valid trials
+```text
+Participants: 37
+Valid trials: 10,651
+```
+
+### Original raw data
+
+The original raw data are **not redistributed in this repository**.
+
+The preregistrations and raw data for all experiments reported by Bräutigam et al. (2024) are publicly available from the authors' Open Science Framework (OSF) project:
+
+```text
+https://osf.io/dbeq2/
+```
+
+For the reward-rate optimality analyses, download the Experiment 2 raw data file and create the following local directory:
+
+```text
+data/raw/
+```
+
+Place the raw data file at:
+
+```text
+data/raw/RawData_Exp2.txt
+```
+
+The resulting local data structure should therefore be:
+
+```text
+data/
+├── raw/
+│   └── RawData_Exp2.txt
+└── processed/
+    └── Braeutigam_Exp2_Stroop_HDDM.csv
+```
+
+`RawData_Exp2.txt` is required by the reward-criterion reconstruction and reward-rate optimality scripts.
 
 ## Computational environment
 
-The HDDM analyses were run inside a Docker/JupyterLab environment.
+The reported HDDM analyses were run inside a Docker/JupyterLab environment.
 
-The environment used for the reported analyses was:
+The environment used for the analyses was:
 
 ```text
 Python 3.12.11
@@ -118,23 +142,31 @@ HDDM 1.0.1RC
 PyMC 2.3.8
 ```
 
-The analysis scripts assume that the project is mounted inside the Docker container at:
+The analysis scripts assume that the project is available inside the Docker container at:
 
 ```text
 /home/jovyan/project
 ```
 
-Therefore, the recommended setup is to place or mount the repository at that location before running the scripts.
+Therefore, the recommended setup is to place or mount the repository at this location before running the scripts.
 
 Because HDDM relies on a specialized software environment, running the analyses inside a compatible Docker environment is recommended.
 
 ## Running the analysis
 
-The following commands assume that the working directory is:
+The following commands assume that the working directory inside the Docker container is:
 
 ```text
 /home/jovyan/project
 ```
+
+Before running the reward-rate analyses, make sure that:
+
+```text
+data/raw/RawData_Exp2.txt
+```
+
+has been downloaded from the original OSF dataset and placed in the expected location.
 
 ### 1. Validate the HDDM input data
 
@@ -142,7 +174,7 @@ The following commands assume that the working directory is:
 python hddm/00_check_hddm_input.py
 ```
 
-This checks the processed data before model fitting.
+This script checks the processed HDDM input data before model fitting.
 
 ### 2. Fit the candidate HDDM models
 
@@ -154,9 +186,13 @@ bash hddm/run_all_formal.sh
 
 Three candidate models are compared:
 
-* `mv`: drift rate varies with Reward × Congruency; decision threshold is constant.
-* `ma`: drift rate varies with Congruency; decision threshold varies with Reward.
-* `mva`: drift rate varies with Reward × Congruency; decision threshold varies with Reward.
+```text
+mv:  v ~ Reward × Congruency; a = constant
+
+ma:  v ~ Congruency; a ~ Reward
+
+mva: v ~ Reward × Congruency; a ~ Reward
+```
 
 For each candidate model, four independent MCMC chains are run.
 
@@ -191,7 +227,7 @@ Posterior predictive checks evaluate whether the fitted models reproduce the mai
 python hddm/04_reward_rate_optimality.py
 ```
 
-This analysis reconstructs the block-specific reward RT criterion from the raw experimental data and calculates expected reward rate across candidate decision thresholds.
+This analysis reconstructs the block-specific reward RT criterion from the original Experiment 2 data and calculates expected reward rate across candidate decision thresholds.
 
 The main analysis follows the intended experimental reward rule:
 
@@ -207,7 +243,9 @@ RR(a) =
             expected trial duration
 ```
 
-The theoretical optimal threshold is the value of (a) that maximizes this expected reward rate.
+Expected trial duration includes the reward cue, fixation interval, response time, feedback duration, and inter-trial interval.
+
+The theoretical optimal threshold is the value of (a) that maximizes expected reward rate.
 
 ### 6. Propagate posterior uncertainty
 
@@ -217,11 +255,11 @@ python hddm/05_final_optimality_320draw.py
 
 The final analysis propagates uncertainty in the HDDM parameters into the optimality calculation using 320 balanced posterior draws from the four formal MCMC chains.
 
-For each draw, the analysis estimates:
+For each posterior draw, the analysis estimates:
 
 * the observed reward-condition decision threshold;
 * the theoretically optimal threshold;
-* the gap between the observed and optimal threshold;
+* the gap between the observed and optimal thresholds;
 * reward-rate efficiency.
 
 A sensitivity analysis is also conducted using the reward rule reconstructed from the experimental log.
@@ -246,7 +284,7 @@ No-reward condition: a_NR = 1.261
 Reward condition:    a_R  = 1.134
 ```
 
-Approximately 97% of the posterior samples supported a lower decision threshold under reward.
+Approximately 97% of posterior samples supported a lower decision threshold under reward.
 
 Thus, participants generally became less cautious when reward was available.
 
@@ -276,11 +314,23 @@ Thus, reward shifted participants' decision thresholds in the direction predicte
 
 ## Sensitivity analysis
 
-The experimental log indicated that a small number of sufficiently fast error responses were also recorded as rewarded.
+Reconstruction of the experimental log indicated that a small number of sufficiently fast error responses were also recorded as rewarded.
 
-For this reason, the main analysis uses the intended rule described in the experiment — correct and sufficiently fast responses receive reward — while an additional sensitivity analysis uses the reward rule observed in the experimental log.
+For this reason, the main analysis follows the intended reward rule described in the experiment:
 
-Although the exact optimal threshold differs between the two reward definitions, both analyses indicate that the observed reward-condition decision threshold remained higher than the corresponding reward-rate optimum.
+```text
+correct + sufficiently fast → reward
+```
+
+An additional sensitivity analysis follows the reward rule observed in the experimental log:
+
+```text
+sufficiently fast → reward
+```
+
+Under the logged-payoff rule, the estimated optimal threshold was lower than under the intended-payoff rule.
+
+However, both analyses led to the same qualitative conclusion: the observed reward-condition decision threshold remained substantially higher than the corresponding reward-rate optimum.
 
 ## Output files
 
@@ -306,7 +356,7 @@ contains observed and posterior-predictive behavioral summaries.
 results/thresholds/
 ```
 
-contains the posterior summaries of the reward and no-reward decision thresholds used in the report.
+contains posterior summaries of the reward and no-reward decision thresholds used in the accompanying report.
 
 ### Reward-rate optimality
 
@@ -314,13 +364,7 @@ contains the posterior summaries of the reward and no-reward decision thresholds
 results/optimality/
 ```
 
-contains:
-
-* the reconstructed reward criterion;
-* group-level reward-rate curves;
-* the reward-rate optimum;
-* posterior uncertainty analyses;
-* sensitivity analyses based on the logged reward rule.
+contains the reconstructed reward criterion, reward-rate curves, group-level optimality results, posterior uncertainty analyses, and sensitivity analyses.
 
 ## Reproducibility notes
 
@@ -330,6 +374,20 @@ HDDM fitting relies on MCMC sampling. Therefore, complete re-fitting of the mode
 
 The reward-rate optimality analysis also relies on stochastic simulation. Posterior uncertainty is therefore propagated across 320 posterior draws rather than relying only on a single point estimate.
 
+The original raw experimental data should be obtained from the authors' OSF repository rather than redistributed through this repository.
+
 ## Reference
 
 Bräutigam, L. C., Leuthold, H., Mackenzie, I. G., & Mittelstädt, V. (2024). Proactive reward in conflict tasks: Does it only enhance general performance or also modulate conflict effects? *Attention, Perception, & Psychophysics, 86*, 2153–2168.
+
+DOI:
+
+```text
+https://doi.org/10.3758/s13414-024-02896-5
+```
+
+Original OSF project:
+
+```text
+https://osf.io/dbeq2/
+```
