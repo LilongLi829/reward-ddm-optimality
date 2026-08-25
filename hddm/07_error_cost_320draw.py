@@ -42,7 +42,7 @@ All output is written under:
     results/optimality/error_cost_320draw/
 """
 
-# 中文说明：这是论文中“主观错误成本敏感性分析”的正式 320 posterior-draw 脚本。
+# 这是论文中“主观错误成本敏感性分析”的正式 320 posterior-draw 脚本。
 # 1) 不重新拟合 HDDM，而是复用 05 已冻结的 320 个联合后验样本。
 # 2) 每个 draw 内固定 v_RI、v_RC、t、z=0.5 以及实验时长/奖励结构，只搜索阈值 a。
 # 3) q_relative 是预先指定的 sensitivity weight，不是从当前数据估计出的心理参数。
@@ -52,7 +52,6 @@ All output is written under:
 # 7) 每完成一个 draw 就原子化保存 checkpoint，可安全中断并用 --resume 继续。
 # 8) q_relative=0 是关键基线复现检查，应该与 05 的 intended-payoff optimum 一致。
 # 9) 最终输出包含逐 draw 结果、汇总、概率、validation、运行配置和输入哈希清单。
-# 下面只增加中文解释性注释；计算语句、参数、随机种子和输出数值逻辑保持不变。
 
 from __future__ import annotations
 
@@ -79,7 +78,7 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 # ---------------------------------------------------------------------
 # Experiment-2 timing constants: identical to the original 05 analysis
-# 中文：实验时长常数与 05 完全一致，确保 q=0 可以作为严格的基线复现。
+# 实验时长常数与 05 完全一致，确保 q=0 可以作为严格的基线复现。
 # ---------------------------------------------------------------------
 
 CUE_S = 0.800
@@ -91,7 +90,7 @@ OVERALL_RT_DEADLINE_S = 3.000
 POINTS_PER_SUCCESS = 10.0
 
 # Sensitivity values are relative to one 10-point successful reward.
-# 中文：q_relative 以一次成功奖励（10 分）为单位；例如 q_relative=1 对应额外错误成本 10 分。
+# q_relative 以一次成功奖励（10 分）为单位；例如 q_relative=1 对应额外错误成本 10 分。
 # q_relative = 1 means one wrong response has an extra subjective
 # negative utility equal in magnitude to one successful 10-point reward.
 DEFAULT_Q_RELATIVE = [0.0, 0.5, 1.0, 2.0, 3.0, 4.0]
@@ -172,7 +171,7 @@ def parse_args() -> argparse.Namespace:
 
 # ---------------------------------------------------------------------
 # File helpers
-# 中文：文件辅助函数负责哈希校验和原子写入，避免长时间运行中断时损坏 checkpoint。
+# 文件辅助函数负责哈希校验和原子写入，避免长时间运行中断时损坏 checkpoint。
 # ---------------------------------------------------------------------
 
 def sha256_file(path: Path) -> str:
@@ -222,7 +221,7 @@ def utility_rate(row: pd.Series | dict, q_points: float) -> float:
 
 # ---------------------------------------------------------------------
 # Simulation
-# 中文：DDM 模拟阶段保留正确、错误、超时三类事件，为扩展目标函数提供独立概率量。
+# DDM 模拟阶段保留正确、错误、超时三类事件，为扩展目标函数提供独立概率量。
 # ---------------------------------------------------------------------
 
 def simulate_condition(
@@ -248,7 +247,7 @@ def simulate_condition(
     """
 
     # Common random numbers across candidate thresholds within the draw.
-    # 中文：同一 draw 内不同 a 使用相同随机数种子，使 a 之间的效用差异更少受随机波动干扰。
+    # 同一 draw 内不同 a 使用相同随机数种子，使 a 之间的效用差异更少受随机波动干扰。
     np.random.seed(seed)
 
     sim = hddm.generate.gen_rts(
@@ -276,7 +275,7 @@ def simulate_condition(
     effective_rt = np.minimum(rt, OVERALL_RT_DEADLINE_S)
 
     # Preserve the original 05 trial-time accounting:
-    # 中文：trial duration 的计算仍沿用 05；所有非正确 trial 使用错误反馈时长。
+    # trial duration 的计算仍沿用 05；所有非正确 trial 使用错误反馈时长。
     # all non-correct trials receive the incorrect-feedback duration.
     feedback_s = np.where(
         correct,
@@ -296,7 +295,7 @@ def simulate_condition(
     n = float(n_sim)
 
     # Average the probability of satisfying each reconstructed block criterion.
-    # 中文：对所有重建出的 block-specific reward criterion 求平均，复现实验奖励规则。
+    # 对所有重建出的 block-specific reward criterion 求平均，复现实验奖励规则。
     p_correct_fast = np.mean(
         np.searchsorted(
             sorted_correct_rt,
@@ -357,7 +356,7 @@ def evaluate_a(
 
 # ---------------------------------------------------------------------
 # Summaries
-# 中文：把逐 draw 结果汇总成 posterior mean、SD、median、95% CrI 和方向概率。
+# 把逐 draw 结果汇总成 posterior mean、SD、median、95% CrI 和方向概率。
 # ---------------------------------------------------------------------
 
 def summarize_vector(x: pd.Series) -> dict[str, float]:
@@ -422,7 +421,7 @@ def build_summaries(res: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 # ---------------------------------------------------------------------
 # One posterior draw
-# 中文：对一个联合 posterior draw 完成 coarse → fine → 必要时 refine 的完整最优阈值搜索。
+# 对一个联合 posterior draw 完成 coarse → fine → 必要时 refine 的完整最优阈值搜索。
 # ---------------------------------------------------------------------
 
 def analyse_one_draw(
@@ -444,7 +443,7 @@ def analyse_one_draw(
 
     # ---------------------------
     # 1) Wide coarse search
-    # 中文：先在宽网格上为每个 q 找到大致最优区域。
+    # 先在宽网格上为每个 q 找到大致最优区域。
     # ---------------------------
     coarse_rows = [
         evaluate_a(
@@ -487,7 +486,7 @@ def analyse_one_draw(
         )
 
     # Simulate the union once, but restrict each q to its own local grid.
-    # 中文：把各 q 的局部候选 a 取并集后只模拟一次，再分别在各自网格内求最优。
+    # 把各 q 的局部候选 a 取并集后只模拟一次，再分别在各自网格内求最优。
     fine_union = np.unique(
         np.round(
             np.concatenate(list(fine_grid_by_q.values())),
@@ -512,7 +511,7 @@ def analyse_one_draw(
     fg["_a_round"] = fg["a"].round(10)
 
     # Observed reward threshold under the same posterior draw.
-    # 中文：理论 a*(q) 与同一个 posterior draw 中的实际奖励阈值 a_R 配对比较。
+    # 理论 a*(q) 与同一个 posterior draw 中的实际奖励阈值 a_R 配对比较。
     at_hat = evaluate_a(
         a_R,
         v_RI=v_RI,
@@ -705,7 +704,7 @@ def analyse_one_draw(
 
 # ---------------------------------------------------------------------
 # Main
-# 中文：主流程负责参数解析、冻结输入、断点续跑、逐 draw 分析、最终汇总与验证。
+# 主流程负责参数解析、冻结输入、断点续跑、逐 draw 分析、最终汇总与验证。
 # ---------------------------------------------------------------------
 
 def main() -> None:
@@ -750,7 +749,7 @@ def main() -> None:
         raise ValueError("q_relative values must be non-negative.")
 
     # Original coarse region + extended region.
-    # 中文：保留 05 原 coarse 区间，同时向上扩展，以覆盖较大错误成本下可能上移的 a*。
+    # 保留 05 原 coarse 区间，同时向上扩展，以覆盖较大错误成本下可能上移的 a*。
     coarse_original = grid_values(
         args.coarse_base_min,
         args.coarse_base_max,
@@ -771,7 +770,7 @@ def main() -> None:
     )
 
     # Frozen reference results are optional but useful for q=0 validation.
-    # 中文：若原 05 逐 draw 结果存在，就逐项验证 q=0 的新 a* 是否与原结果一致。
+    # 若原 05 逐 draw 结果存在，就逐项验证 q=0 的新 a* 是否与原结果一致。
     reference = (
         pd.read_csv(original_final_file)
         if original_final_file.exists()
@@ -779,7 +778,7 @@ def main() -> None:
     )
 
     # Save reproducibility metadata before the first simulation.
-    # 中文：在模拟开始前保存配置和输入 SHA-256，便于之后审计输入是否被改动。
+    # 在模拟开始前保存配置和输入 SHA-256，便于之后审计输入是否被改动。
     config = {
         "script": "hddm/07_error_cost_320draw.py",
         "project_root": str(root),
@@ -980,7 +979,7 @@ def main() -> None:
 
     # -------------------------------------------------------------
     # Current status
-    # 中文：检查每个 analysis_id 是否已经拥有完整的 q 网格，以判断是否真正完成。
+    # 检查每个 analysis_id 是否已经拥有完整的 q 网格，以判断是否真正完成。
     # -------------------------------------------------------------
     if checkpoint_file.exists():
         res = pd.read_csv(checkpoint_file)
@@ -1018,7 +1017,7 @@ def main() -> None:
 
     # -------------------------------------------------------------
     # Finalize only when all 320 posterior draws are present
-    # 中文：只有 320 个 posterior draw 全部完成后才生成 final 文件，避免误把 partial 当正式结果。
+    # 只有 320 个 posterior draw 全部完成后才生成 final 文件，避免误把 partial 当正式结果。
     # -------------------------------------------------------------
     res = res.sort_values(
         ["analysis_id", "q_relative"]
@@ -1035,7 +1034,7 @@ def main() -> None:
     atomic_to_csv(probs, final_probs_file)
 
     # q=0 reproduction diagnostic
-    # 中文：这是最重要的内部校验之一；q=0 应重现原 intended-payoff 的逐 draw a*。
+    # 这是最重要的内部校验之一；q=0 应重现原 intended-payoff 的逐 draw a*。
     q0 = res[np.isclose(res["q_relative"], 0.0)].copy()
 
     validation = {
@@ -1067,7 +1066,7 @@ def main() -> None:
     )
 
     # Human-readable GitHub inventory.
-    # 中文：生成便于 GitHub 归档和人工核对的文件清单。
+    # 生成便于 GitHub 归档和人工核对的文件清单。
     inventory_lines = [
         "# Error-cost sensitivity analysis files",
         "",
