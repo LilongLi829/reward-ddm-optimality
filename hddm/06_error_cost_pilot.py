@@ -1,11 +1,10 @@
-# 中文说明：本脚本是“主观错误成本”扩展的组水平 pilot。
+# “主观错误成本”扩展的组水平 pilot。
 # 目的不是估计新的心理参数，而是先检查：当错误被赋予额外主观成本时，
 # 理论最优阈值 a* 是否会向奖励条件下实际观察到的 a_R 移动。
 # 输入沿用 05 正式分析冻结下来的 posterior draws 和重建奖励标准；
 # pilot 只使用这些 posterior draws 的组平均参数，因此不能替代 07 的 320-draw 正式分析。
 # q=0 对应原始 intended-payoff 目标；更大的 q 表示非正确 trial 的额外主观成本更高。
 # 注意：本 pilot 用 p_noncorrect=1-accuracy（包含 wrong 与 timeout）；正式 07 脚本会将二者分开，且只惩罚 wrong response。
-# 代码中的随机种子、任务时长、奖励点数、阈值网格和计算语句均保持原样。
 # 输出仅用于选择正式 sensitivity analysis 的合理 q 范围。
 
 from pathlib import Path
@@ -39,7 +38,7 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ------------------------------------------------------------
 # Same experimental constants as 05_final_optimality_320draw.py
-# 中文：这里完全沿用 05 脚本的实验时长和奖励常数，避免改变基准目标函数。
+# 这里完全沿用 05 脚本的实验时长和奖励常数，避免改变基准目标函数。
 # ------------------------------------------------------------
 
 CUE_S = 0.800
@@ -52,7 +51,7 @@ POINTS_PER_SUCCESS = 10.0
 
 # ------------------------------------------------------------
 # Pilot settings
-# 中文：pilot 的 q 网格以“点数等价值”表示额外错误成本；q=0 必须退化为原分析。
+# pilot 的 q 网格以“点数等价值”表示额外错误成本；q=0 必须退化为原分析。
 # q = extra subjective cost of an incorrect/non-correct trial,
 # expressed in point-equivalent units.
 # q=0 exactly reduces to the original intended-payoff objective.
@@ -72,7 +71,7 @@ SEED = 20260822
 
 # ------------------------------------------------------------
 # Load frozen posterior draws and reconstructed criteria
-# 中文：读取已经冻结的 320 个联合后验样本和按实验日志重建的奖励 RT 标准。
+# 读取已经冻结的 320 个联合后验样本和按实验日志重建的奖励 RT 标准。
 # ------------------------------------------------------------
 
 post = pd.read_csv(POST_FILE)
@@ -94,7 +93,7 @@ if "criterion_ms" not in crit.columns:
 criteria_s = crit["criterion_ms"].to_numpy(dtype=float) / 1000.0
 
 # Group-level posterior means for the pilot only
-# 中文：这里只取组平均做快速 pilot；正式不确定性传播由 07 脚本逐 draw 完成。
+# 这里只取组平均做快速 pilot；正式不确定性传播由 07 脚本逐 draw 完成。
 a_R = float(post["a_R"].mean())
 v_RI = float(post["v_RI"].mean())
 v_RC = float(post["v_RC"].mean())
@@ -110,13 +109,13 @@ print(f"N reward criteria = {len(criteria_s)}")
 
 # ------------------------------------------------------------
 # Simulation: copied conceptually from original 05 script
-# 中文：模拟逻辑与 05 保持一致，只为后续效用函数增加错误成本项准备必要概率量。
+# 模拟逻辑与 05 保持一致，只为后续效用函数增加错误成本项准备必要概率量。
 # ------------------------------------------------------------
 
 def simulate_condition(a, v, t, n_sim, seed, criteria_s):
 
     # Common random numbers across candidate thresholds
-    # 中文：不同候选阈值重复使用同一随机数流，以降低 Monte Carlo 噪声对 a* 排序的影响。
+    # 不同候选阈值重复使用同一随机数流，以降低 Monte Carlo 噪声对 a* 排序的影响。
     np.random.seed(seed)
 
     sim = hddm.generate.gen_rts(
@@ -162,7 +161,7 @@ def simulate_condition(a, v, t, n_sim, seed, criteria_s):
     n = float(n_sim)
 
     # Probability of satisfying the intended reward rule:
-    # 中文：奖励事件仍严格按 intended rule 定义为“正确且快于重建奖励标准”。
+    # 奖励事件仍严格按 intended rule 定义为“正确且快于重建奖励标准”。
     # correct AND faster than reconstructed block criterion
     p_correct_fast = np.mean(
         np.searchsorted(
@@ -185,7 +184,7 @@ def simulate_condition(a, v, t, n_sim, seed, criteria_s):
 def evaluate_a(a):
 
     # Reward-incongruent
-    # 中文：先单独模拟 Reward-Incongruent 条件。
+    # 先单独模拟 Reward-Incongruent 条件。
     ri = simulate_condition(
         a=a,
         v=v_RI,
@@ -196,7 +195,7 @@ def evaluate_a(a):
     )
 
     # Reward-congruent
-    # 中文：再单独模拟 Reward-Congruent 条件。
+    # 再单独模拟 Reward-Congruent 条件。
     rc = simulate_condition(
         a=a,
         v=v_RC,
@@ -207,7 +206,7 @@ def evaluate_a(a):
     )
 
     # Experiment has equal RI / RC weighting
-    # 中文：实验中 RI/RC 等比例，因此两个条件按 0.5/0.5 加权。
+    # 实验中 RI/RC 等比例，因此两个条件按 0.5/0.5 加权。
     avg = {
         key: 0.5 * (ri[key] + rc[key])
         for key in ri
@@ -221,7 +220,7 @@ def evaluate_a(a):
 
 # ------------------------------------------------------------
 # Simulate each threshold once.
-# 中文：每个候选 a 只模拟一次，随后同一批模拟结果用于所有 q，保证 q 间比较公平。
+# 每个候选 a 只模拟一次，随后同一批模拟结果用于所有 q，保证 q 间比较公平。
 # The same simulations can then be evaluated under every q.
 # ------------------------------------------------------------
 
@@ -245,7 +244,7 @@ curve = pd.DataFrame(rows)
 
 # ------------------------------------------------------------
 # Calculate utility for each subjective error cost q
-# 中文：在不重跑 DDM 模拟的前提下，对每个 q 重新计算扩展效用率并寻找最优 a。
+# 在不重跑 DDM 模拟的前提下，对每个 q 重新计算扩展效用率并寻找最优 a。
 # ------------------------------------------------------------
 
 summary_rows = []
@@ -288,7 +287,7 @@ closest = summary.loc[
 
 # ------------------------------------------------------------
 # Save
-# 中文：保存完整曲线和 pilot 汇总，便于核对 q 网格是否覆盖可能的 a* 区域。
+# 保存完整曲线和 pilot 汇总，便于核对 q 网格是否覆盖可能的 a* 区域。
 # ------------------------------------------------------------
 
 curve_file = OUT_DIR / "error_cost_pilot_curve.csv"
@@ -299,7 +298,7 @@ summary.to_csv(summary_file, index=False)
 
 # ------------------------------------------------------------
 # Final output
-# 中文：打印每个 q 的 a*(q) 与实际 a_R 的差距；这里只用于 pilot 判断。
+# 打印每个 q 的 a*(q) 与实际 a_R 的差距；这里只用于 pilot 判断。
 # ------------------------------------------------------------
 
 print("\n==============================================")
