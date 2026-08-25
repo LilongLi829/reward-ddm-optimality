@@ -855,7 +855,7 @@ def main() -> None:
     )
 
     # Also copy the two small frozen input tables into the new directory
-    # 中文：把两个关键冻结输入复制进结果目录，使 GitHub 中该结果文件夹可独立核查。
+    # 把两个关键冻结输入复制进结果目录，使 GitHub 中该结果文件夹可独立核查。
     # so the GitHub result folder is self-contained.
     frozen_inputs = out_dir / "frozen_inputs"
     frozen_inputs.mkdir(parents=True, exist_ok=True)
