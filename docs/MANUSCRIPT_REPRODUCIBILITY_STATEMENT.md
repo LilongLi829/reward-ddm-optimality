@@ -1,0 +1,5 @@
+# Recommended reproducibility statement
+
+All numerical results used in the manuscript's primary evidential chain can be regenerated or independently checked from archived analysis inputs and code distributed with the repository. Because the analyses re-use third-party public datasets and, in some cases, recovered historical model outputs, the earliest reproducible stage differs across datasets. The repository explicitly identifies that stage for each study and does not equate manuscript-result reproduction with a fresh rerun of every original raw-data/model-fitting pipeline. The frozen manuscript verifier currently passes all 58 numerical checks across the five reported datasets.
+
+For Bogacz, reproduction begins from frozen participant-by-condition predictions because the exact generator of the historical reanalysis q values is not preserved. For Evans, reproduction begins from recovered posterior-derived participant inputs rather than a fresh rerun of the historical multi-chain posterior. These limitations are documented and do not affect regeneration of the numerical results reported from those frozen inputs.

@@ -1,0 +1,7 @@
+metric,recomputed,expected,tolerance,PASS
+N,79.0,79.0,0.0,True
+observed_mean_a,1.5184147828935026,1.518414783,1e-06,True
+M0_subject_MAE,0.18469884023894464,0.184699,1e-06,True
+Mq_subject_MAE,0.1792243984076753,0.179224,1e-06,True
+relative_reduction_pct,2.9639827863494284,2.964,0.01,True
+wins,42.0,42.0,0.0,True

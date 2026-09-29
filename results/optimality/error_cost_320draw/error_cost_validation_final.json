@@ -1,8 +1,0 @@
-{
-  "n_q0_draws": 320,
-  "mean_new_q0_a_star": 0.5270625000000001,
-  "mean_original_q0_a_star": 0.5270625,
-  "mean_abs_difference_from_original": 1.6479873021779667e-17,
-  "max_abs_difference_from_original": 2.7755575615628914e-16,
-  "remaining_edge_hits": 0
-}

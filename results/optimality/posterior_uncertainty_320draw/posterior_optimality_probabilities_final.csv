@@ -1,6 +1,0 @@
-quantity,value,n_success,n_draws
-P(a_R > a*_logged | sampled posterior draws),1.0,320,320
-P(a_R > a*_intended | sampled posterior draws),1.0,320,320
-P(efficiency_intended < 1 | sampled posterior draws),1.0,320,320
-P(efficiency_intended < 0.9 | sampled posterior draws),1.0,320,320
-P(efficiency_logged < 1 | sampled posterior draws),1.0,320,320

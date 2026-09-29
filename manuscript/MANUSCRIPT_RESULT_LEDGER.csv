@@ -1,0 +1,78 @@
+study,metric,expected,recomputed,tolerance,status,generator,input_stage
+Hübner,N,29.0,29.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,MAE_M0,0.03955931,0.0395593118426457,1e-06,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,MAE_Mq,0.010187,0.0101868150023685,1e-06,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,relative_reduction_pct,74.2493,74.24926135497887,0.001,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,N_improved,29.0,29.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,mean_improvement,0.029372,0.029372496840277,1e-06,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,mean_q_train,615.863213,615.8632132396905,1e-05,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,condition4_total_N,64.0,64.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,condition4_excluded_meanRT_gt_550ms,3.0,3.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,condition4_regression_N,61.0,61.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,satf_r,0.8650329,0.8650328589847514,1e-06,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,satf_t,13.24346,13.243456291200692,1e-05,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,satf_df,59.0,59.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,satf_p,2.524969e-19,2.524969397390073e-19,1.0000000000000001e-24,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,satf_rt_at_50pct_accuracy_ms,192.6815,192.6815239656932,0.001,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,satf_rt_at_100pct_accuracy_ms,514.3876,514.3875816780259,0.001,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,m0_optimal_rt_ms,260.4875,260.48750974972154,0.001,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,m0_optimal_accuracy,0.605385,0.6053850000000001,1e-06,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,m0_expected_points_per_trial,235.805,235.80501891016485,0.001,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,condition2_gain_N,29.0,29.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,condition2_gain_observed_mean_rt_ms,416.0165,416.0165474407749,0.001,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,condition2_gain_observed_median_rt_ms,399.0641,399.0640625,0.001,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,condition2_gain_observed_mean_accuracy,0.88851,0.8885099630349144,1e-06,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,N_observed_rt_slower_than_m0,29.0,29.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,N_observed_accuracy_above_m0,29.0,29.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+TBE Exp3,N,58.0,58.0,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,q_train,0.73,0.73,1e-12,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,MAE_M0,1.054934,1.054933500370269,1e-06,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,MAE_Mq,0.621429,0.6214293331223653,1e-06,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,relative_reduction_pct,41.093,41.09303260307393,0.001,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,N_improved,43.0,43.0,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,mean_improvement,0.433504,0.4335041672479037,1e-06,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,observed_above_M0,57.0,57.0,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,Mq_above_M0,58.0,58.0,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+Evans,N,79.0,79.0,0.0,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
+Evans,observed_mean_a,1.518414783,1.5184147828935026,1e-06,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
+Evans,M0_subject_MAE,0.184699,0.1846988402389446,1e-06,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
+Evans,Mq_subject_MAE,0.179224,0.1792243984076753,1e-06,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
+Evans,relative_reduction_pct,2.964,2.9639827863494284,0.01,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
+Evans,wins,42.0,42.0,0.0,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
+Bogacz,N_participants,20.0,20.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,N_targets,60.0,60.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,MAE_M0,0.224371,0.2243710035926356,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,MAE_Mq,0.25621,0.2562101643877554,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,relative_reduction_pct,-14.1904,-14.190407978442,0.001,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,N_improved,35.0,35.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,mean_improvement,-0.031839,-0.0318391607951197,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D0.5_q,0.108048,0.1080484657671683,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D0.5_MAE_M0,0.265164,0.2651637311148039,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D0.5_MAE_Mq,0.254571,0.2545711778108419,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D0.5_improved,15.0,15.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D1_q,0.108049,0.108048500176787,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D1_MAE_M0,0.235086,0.2350863788823024,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D1_MAE_Mq,0.222654,0.2226539141119818,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D1_improved,13.0,13.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D2_q,0.440641,0.4406410731746566,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D2_MAE_M0,0.172863,0.1728629007808006,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D2_MAE_Mq,0.291405,0.2914054012404424,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,D2_improved,7.0,7.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Leng,Reward_Drift rate v_mean,0.109869,0.109868794663845,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Reward_Drift rate v_CIlo,0.044327,0.044326716671496,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Reward_Drift rate v_CIhi,0.175386,0.175386131527224,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Reward_Threshold a_mean,-0.048249,-0.0482488808253613,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Reward_Threshold a_CIlo,-0.098626,-0.0986257714974198,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Reward_Threshold a_CIhi,0.004626,0.0046257617837496,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Penalty_Drift rate v_mean,0.004052,0.00405207078315,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Penalty_Drift rate v_CIlo,-0.071715,-0.0717150499352444,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Penalty_Drift rate v_CIhi,0.080112,0.0801116661754843,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Penalty_Threshold a_mean,0.07491,0.0749099737929872,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Penalty_Threshold a_CIlo,0.007321,0.0073210467299261,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,Penalty_Threshold a_CIhi,0.139704,0.139703799944183,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,mapping_Subjective,0.326167,0.326167006256732,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,mapping_Objective_proportional,0.543403,0.543402550204039,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,mapping_Stable,0.326961,0.326961135986077,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,forward_a_Subjective,0.231201,0.231201316397398,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,forward_a_Objective_proportional,2.853353,2.85335268289064,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
+Leng,forward_a_Stable,0.235941,0.235941246331576,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input

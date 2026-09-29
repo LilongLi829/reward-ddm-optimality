@@ -1,0 +1,19 @@
+metric,recomputed,expected,tolerance,PASS
+Reward_Drift rate v_mean,0.109868794663845,0.109869,1e-06,True
+Reward_Drift rate v_CIlo,0.044326716671496,0.044327,1e-06,True
+Reward_Drift rate v_CIhi,0.175386131527224,0.175386,1e-06,True
+Reward_Threshold a_mean,-0.0482488808253613,-0.048249,1e-06,True
+Reward_Threshold a_CIlo,-0.0986257714974198,-0.098626,1e-06,True
+Reward_Threshold a_CIhi,0.0046257617837496,0.004626,1e-06,True
+Penalty_Drift rate v_mean,0.00405207078315,0.004052,1e-06,True
+Penalty_Drift rate v_CIlo,-0.0717150499352444,-0.071715,1e-06,True
+Penalty_Drift rate v_CIhi,0.0801116661754843,0.080112,1e-06,True
+Penalty_Threshold a_mean,0.0749099737929872,0.07491,1e-06,True
+Penalty_Threshold a_CIlo,0.0073210467299261,0.007321,1e-06,True
+Penalty_Threshold a_CIhi,0.139703799944183,0.139704,1e-06,True
+mapping_Subjective,0.326167006256732,0.326167,1e-06,True
+mapping_Objective_proportional,0.543402550204039,0.543403,1e-06,True
+mapping_Stable,0.326961135986077,0.326961,1e-06,True
+forward_a_Subjective,0.231201316397398,0.231201,1e-06,True
+forward_a_Objective_proportional,2.85335268289064,2.853353,1e-06,True
+forward_a_Stable,0.235941246331576,0.235941,1e-06,True

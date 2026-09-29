@@ -1,0 +1,10 @@
+metric,recomputed,expected,tolerance,PASS
+N,58.0,58.0,0.0,True
+q_train,0.73,0.73,1e-12,True
+MAE_M0,1.054933500370269,1.054934,1e-06,True
+MAE_Mq,0.6214293331223653,0.621429,1e-06,True
+relative_reduction_pct,41.09303260307393,41.093,0.001,True
+N_improved,43.0,43.0,0.0,True
+mean_improvement,0.43350416724790375,0.433504,1e-06,True
+observed_above_M0,57.0,57.0,0.0,True
+Mq_above_M0,58.0,58.0,0.0,True

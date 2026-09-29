@@ -1,0 +1,9 @@
+file,classification,reason,public_release
+BOGACZ_predictions.csv,derived/frozen analysis input,Required for manuscript verifier,Included
+EVANS_subjects.csv,derived/frozen analysis input,Required for manuscript verifier,Included
+HUBNER_LOPO.csv,derived/frozen analysis input,Required for manuscript verifier,Included
+HUBNER_SATF.csv,derived/frozen analysis input,Required for manuscript verifier,Included
+LENG_DDM_effects.csv,derived/frozen analysis input,Required for manuscript verifier,Included
+LENG_forward.csv,derived/frozen analysis input,Required for manuscript verifier,Included
+LENG_mapping.csv,derived/frozen analysis input,Required for manuscript verifier,Included
+TBE_N58_validation.csv,derived/frozen analysis input,Required for manuscript verifier,Included

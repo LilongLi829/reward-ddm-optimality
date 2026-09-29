@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript and the original studies whose data are reanalyzed."
+title: "Error avoidance in speeded decision making: public-data reanalysis"
+version: "3.2.0"
+date-released: 2026-09-28
+type: software
+authors:
+  - family-names: "Li"
+    given-names: "Lilong"
+  - family-names: "Hu"
+    given-names: "Chuan-Peng"
+# Add manuscript DOI/preprint URL and ORCIDs when finalized.
