@@ -1,0 +1,178 @@
+                                metric   recomputed     expected    tolerance  PASS
+                                     N 2.900000e+01 2.900000e+01 0.000000e+00  True
+                                MAE_M0 3.955931e-02 3.955931e-02 1.000000e-06  True
+                                MAE_Mq 1.018682e-02 1.018700e-02 1.000000e-06  True
+                relative_reduction_pct 7.424926e+01 7.424930e+01 1.000000e-03  True
+                            N_improved 2.900000e+01 2.900000e+01 0.000000e+00  True
+                      mean_improvement 2.937250e-02 2.937200e-02 1.000000e-06  True
+                          mean_q_train 6.158632e+02 6.158632e+02 1.000000e-05  True
+                    condition4_total_N 6.400000e+01 6.400000e+01 0.000000e+00  True
+   condition4_excluded_meanRT_gt_550ms 3.000000e+00 3.000000e+00 0.000000e+00  True
+               condition4_regression_N 6.100000e+01 6.100000e+01 0.000000e+00  True
+                                satf_r 8.650329e-01 8.650329e-01 1.000000e-06  True
+                                satf_t 1.324346e+01 1.324346e+01 1.000000e-05  True
+                               satf_df 5.900000e+01 5.900000e+01 0.000000e+00  True
+                                satf_p 2.524969e-19 2.524969e-19 1.000000e-24  True
+          satf_rt_at_50pct_accuracy_ms 1.926815e+02 1.926815e+02 1.000000e-03  True
+         satf_rt_at_100pct_accuracy_ms 5.143876e+02 5.143876e+02 1.000000e-03  True
+                      m0_optimal_rt_ms 2.604875e+02 2.604875e+02 1.000000e-03  True
+                   m0_optimal_accuracy 6.053850e-01 6.053850e-01 1.000000e-06  True
+          m0_expected_points_per_trial 2.358050e+02 2.358050e+02 1.000000e-03  True
+                     condition2_gain_N 2.900000e+01 2.900000e+01 0.000000e+00  True
+   condition2_gain_observed_mean_rt_ms 4.160165e+02 4.160165e+02 1.000000e-03  True
+ condition2_gain_observed_median_rt_ms 3.990641e+02 3.990641e+02 1.000000e-03  True
+condition2_gain_observed_mean_accuracy 8.885100e-01 8.885100e-01 1.000000e-06  True
+          N_observed_rt_slower_than_m0 2.900000e+01 2.900000e+01 0.000000e+00  True
+          N_observed_accuracy_above_m0 2.900000e+01 2.900000e+01 0.000000e+00  True
+                        bootstrap95_lo 2.643909e-02 2.643909e-02 0.000000e+00  True
+                        bootstrap95_hi 3.211501e-02 3.211501e-02 0.000000e+00  True
+
+Hubner: 27/27 PASS; figures regenerated
+                metric  recomputed  expected    tolerance  PASS
+                     N   58.000000 58.000000 0.000000e+00  True
+               q_train    0.730000  0.730000 1.000000e-12  True
+                MAE_M0    1.054934  1.054934 1.000000e-06  True
+                MAE_Mq    0.621429  0.621429 1.000000e-06  True
+relative_reduction_pct   41.093033 41.093000 1.000000e-03  True
+            N_improved   43.000000 43.000000 0.000000e+00  True
+      mean_improvement    0.433504  0.433504 1.000000e-06  True
+     observed_above_M0   57.000000 57.000000 0.000000e+00  True
+           Mq_above_M0   58.000000 58.000000 0.000000e+00  True
+        bootstrap95_lo    0.294939  0.294939 0.000000e+00  True
+        bootstrap95_hi    0.565247  0.565247 0.000000e+00  True
+
+TBE: 11/11 PASS; figure regenerated
+                metric  recomputed  expected  tolerance  PASS
+                     N   79.000000 79.000000   0.000000  True
+       observed_mean_a    1.518415  1.518415   0.000001  True
+        M0_subject_MAE    0.184699  0.184699   0.000001  True
+        Mq_subject_MAE    0.179224  0.179224   0.000001  True
+relative_reduction_pct    2.963983  2.964000   0.010000  True
+                  wins   42.000000 42.000000   0.000000  True
+        bootstrap95_lo   -0.010625 -0.010625   0.000000  True
+        bootstrap95_hi    0.022157  0.022157   0.000000  True
+
+Evans: 8/8 PASS; figure regenerated
+                metric  recomputed   expected  tolerance  PASS
+        N_participants   20.000000  20.000000   0.000000  True
+             N_targets   60.000000  60.000000   0.000000  True
+                MAE_M0    0.224371   0.224371   0.000001  True
+                MAE_Mq    0.256210   0.256210   0.000001  True
+relative_reduction_pct  -14.190408 -14.190400   0.001000  True
+            N_improved   35.000000  35.000000   0.000000  True
+      mean_improvement   -0.031839  -0.031839   0.000001  True
+                D0.5_q    0.108048   0.108048   0.000001  True
+           D0.5_MAE_M0    0.265164   0.265164   0.000001  True
+           D0.5_MAE_Mq    0.254571   0.254571   0.000001  True
+         D0.5_improved   15.000000  15.000000   0.000000  True
+                  D1_q    0.108049   0.108049   0.000001  True
+             D1_MAE_M0    0.235086   0.235086   0.000001  True
+             D1_MAE_Mq    0.222654   0.222654   0.000001  True
+           D1_improved   13.000000  13.000000   0.000000  True
+                  D2_q    0.440641   0.440641   0.000001  True
+             D2_MAE_M0    0.172863   0.172863   0.000001  True
+             D2_MAE_Mq    0.291405   0.291405   0.000001  True
+           D2_improved    7.000000   7.000000   0.000000  True
+cluster_bootstrap95_lo   -0.069591  -0.069591   0.000000  True
+cluster_bootstrap95_hi    0.006729   0.006729   0.000000  True
+
+Bogacz: 21/21 PASS; figure regenerated
+                          metric  recomputed  expected  tolerance  PASS
+        Reward_Drift rate v_mean    0.109869  0.109869   0.000001  True
+        Reward_Drift rate v_CIlo    0.044327  0.044327   0.000001  True
+        Reward_Drift rate v_CIhi    0.175386  0.175386   0.000001  True
+         Reward_Threshold a_mean   -0.048249 -0.048249   0.000001  True
+         Reward_Threshold a_CIlo   -0.098626 -0.098626   0.000001  True
+         Reward_Threshold a_CIhi    0.004626  0.004626   0.000001  True
+       Penalty_Drift rate v_mean    0.004052  0.004052   0.000001  True
+       Penalty_Drift rate v_CIlo   -0.071715 -0.071715   0.000001  True
+       Penalty_Drift rate v_CIhi    0.080112  0.080112   0.000001  True
+        Penalty_Threshold a_mean    0.074910  0.074910   0.000001  True
+        Penalty_Threshold a_CIlo    0.007321  0.007321   0.000001  True
+        Penalty_Threshold a_CIhi    0.139704  0.139704   0.000001  True
+              mapping_Subjective    0.326167  0.326167   0.000001  True
+  mapping_Objective_proportional    0.543403  0.543403   0.000001  True
+                  mapping_Stable    0.326961  0.326961   0.000001  True
+            forward_a_Subjective    0.231201  0.231201   0.000001  True
+forward_a_Objective_proportional    2.853353  2.853353   0.000001  True
+                forward_a_Stable    0.235941  0.235941   0.000001  True
+
+Leng: 18/18 PASS; figures regenerated
+              study  passed  total status
+             Hübner      27     27   PASS
+           TBE Exp3      11     11   PASS
+              Evans       8      8   PASS
+             Bogacz      21     21   PASS
+               Leng      18     18   PASS
+Figure regeneration       1      1   PASS
+Figure regeneration       1      1   PASS
+Figure regeneration       1      1   PASS
+Figure regeneration       1      1   PASS
+Figure regeneration       1      1   PASS
+Figure regeneration       1      1   PASS
+Figure regeneration       1      1   PASS
+
+Numerical checks: 85/85 PASS
+Figures: 7/7 regenerated
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.

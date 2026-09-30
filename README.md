@@ -12,7 +12,7 @@ Python 3 with the packages listed in `requirements.txt` is required.
 python run_all.py
 ```
 
-The command executes all five study-specific reproduction scripts and writes the combined verification summary to `verification/summary.csv`.
+The command executes all five study-specific reproduction scripts, regenerates Figures 1–7, writes `verification/summary.csv`, and rebuilds `manuscript/MANUSCRIPT_RESULT_LEDGER.csv`.
 
 Individual analyses can also be run directly from their study directories:
 
@@ -50,3 +50,7 @@ Repository authors are listed in `CITATION.cff`. Cite the original studies when 
 ## License
 
 No repository-wide open-source license is asserted in this release. Third-party materials remain governed by their upstream terms.
+
+## Deterministic release bootstrap
+
+Hübner, TBE, Evans, and Bogacz participant-level confidence intervals are regenerated with 10,000 bootstrap resamples and fixed seed `20260929`. Use the values written to each study's `results/bootstrap_ci.csv` in the final manuscript. This replaces earlier working-analysis Monte-Carlo endpoints whose original random-number state was not preserved.

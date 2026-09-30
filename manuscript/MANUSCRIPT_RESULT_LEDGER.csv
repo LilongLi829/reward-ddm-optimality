@@ -24,6 +24,8 @@ Hübner,condition2_gain_observed_median_rt_ms,399.0641,399.0640625,0.001,PASS,st
 Hübner,condition2_gain_observed_mean_accuracy,0.88851,0.8885099630349144,1e-06,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
 Hübner,N_observed_rt_slower_than_m0,29.0,29.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
 Hübner,N_observed_accuracy_above_m0,29.0,29.0,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,bootstrap95_lo,0.0264390915581053,0.0264390915581053,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
+Hübner,bootstrap95_hi,0.0321150126855806,0.0321150126855806,0.0,PASS,studies/01_hubner/scripts/reproduce_hubner.py,archived derived/frozen analysis input
 TBE Exp3,N,58.0,58.0,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
 TBE Exp3,q_train,0.73,0.73,1e-12,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
 TBE Exp3,MAE_M0,1.054934,1.054933500370269,1e-06,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
@@ -33,12 +35,16 @@ TBE Exp3,N_improved,43.0,43.0,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe
 TBE Exp3,mean_improvement,0.433504,0.4335041672479037,1e-06,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
 TBE Exp3,observed_above_M0,57.0,57.0,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
 TBE Exp3,Mq_above_M0,58.0,58.0,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,bootstrap95_lo,0.2949386290471695,0.2949386290471695,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
+TBE Exp3,bootstrap95_hi,0.5652467232250808,0.5652467232250808,0.0,PASS,studies/02_tbe_exp3/scripts/reproduce_tbe_exp3.py,archived derived/frozen analysis input
 Evans,N,79.0,79.0,0.0,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
 Evans,observed_mean_a,1.518414783,1.5184147828935026,1e-06,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
 Evans,M0_subject_MAE,0.184699,0.1846988402389446,1e-06,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
 Evans,Mq_subject_MAE,0.179224,0.1792243984076753,1e-06,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
 Evans,relative_reduction_pct,2.964,2.9639827863494284,0.01,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
 Evans,wins,42.0,42.0,0.0,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
+Evans,bootstrap95_lo,-0.0106245481333096,-0.0106245481333096,0.0,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
+Evans,bootstrap95_hi,0.0221566825841166,0.0221566825841166,0.0,PASS,studies/03_evans/scripts/reproduce_evans.py,archived derived/frozen analysis input
 Bogacz,N_participants,20.0,20.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
 Bogacz,N_targets,60.0,60.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
 Bogacz,MAE_M0,0.224371,0.2243710035926356,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
@@ -58,6 +64,8 @@ Bogacz,D2_q,0.440641,0.4406410731746566,1e-06,PASS,studies/04_bogacz/scripts/rep
 Bogacz,D2_MAE_M0,0.172863,0.1728629007808006,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
 Bogacz,D2_MAE_Mq,0.291405,0.2914054012404424,1e-06,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
 Bogacz,D2_improved,7.0,7.0,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,cluster_bootstrap95_lo,-0.0695909108827828,-0.0695909108827828,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
+Bogacz,cluster_bootstrap95_hi,0.0067293143888343,0.0067293143888343,0.0,PASS,studies/04_bogacz/scripts/reproduce_bogacz.py,archived derived/frozen analysis input
 Leng,Reward_Drift rate v_mean,0.109869,0.109868794663845,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
 Leng,Reward_Drift rate v_CIlo,0.044327,0.044326716671496,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input
 Leng,Reward_Drift rate v_CIhi,0.175386,0.175386131527224,1e-06,PASS,studies/05_leng/scripts/reproduce_leng.py,archived derived/frozen analysis input

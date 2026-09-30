@@ -24,3 +24,5 @@ condition2_gain_observed_median_rt_ms,399.0640625,399.0641,0.001,True
 condition2_gain_observed_mean_accuracy,0.8885099630349144,0.88851,1e-06,True
 N_observed_rt_slower_than_m0,29.0,29.0,0.0,True
 N_observed_accuracy_above_m0,29.0,29.0,0.0,True
+bootstrap95_lo,0.02643909155810534,0.02643909155810534,0.0,True
+bootstrap95_hi,0.032115012685580625,0.032115012685580625,0.0,True
